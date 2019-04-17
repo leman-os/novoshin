@@ -119,3 +119,22 @@ gulp.task('dev', ['css', 'js', 'browserSync'], function() {
   gulp.watch('./js/*.js', ['js']);
   gulp.watch('./*.html', browserSync.reload);
 });
+
+gulp.task('deploy', function() {
+
+	var conn = ftp.create({
+		host:      'novoshin.beget.tech',
+		user:      'novoshin_admin',
+		password:  'Qwe123we',
+		parallel:  10,
+		log: gutil.log
+	});
+
+	var globs = [
+	'dist/**',
+	'dist/.htaccess',
+	];
+	return gulp.src(globs, {buffer: false})
+	.pipe(conn.dest('/novoshin.ru/public_html/'));
+
+});
