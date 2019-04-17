@@ -357,6 +357,23 @@ form .row:first-child .floating-label-form-group {
   text-indent: 40px;
 }
 
+.aboutus a {
+  text-decoration: underline;
+}
+
+.aboutus .rbximg {
+  text-align: center;
+}
+
+.aboutus .rbximg img {
+  margin: 15px 0;
+  height: 40px;
+}
+
+.aboutus .rbximg p {
+  text-align: center !important;
+}
+
 b, strong {
   font-weight: 600;
 }
